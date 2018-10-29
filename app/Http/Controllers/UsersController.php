@@ -13,5 +13,13 @@ class UsersController extends Controller
         return view('index', ['user' => $user]);
     }
 
+    public function addResources() {
+        $user = User::first();
+        $user->food +=10;
+        $user->metal +=10;
+
+        return view('index', ['user' => $user]);
+    }
+
     
 }

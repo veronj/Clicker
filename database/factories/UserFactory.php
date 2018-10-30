@@ -23,6 +23,6 @@ $factory->define(App\User::class, function (Faker $faker) {
         'food' => 50,
         'metal' => 20,
         'coal' => 0,
-        
+        'day' => 1
     ];
 });

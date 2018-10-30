@@ -17,6 +17,8 @@ class UsersController extends Controller
         $user = User::first();
         $user->food +=10;
         $user->metal +=10;
+        $user->day++;
+        $user->save();
 
         return view('index', ['user' => $user]);
     }

@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\User;
 
 class Kernel extends ConsoleKernel
 {
@@ -26,6 +27,19 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $schedule->call(function() {
+            $user = User::first();
+            $user->food +=10;
+            $user->metal +=10;
+            $user->day++;
+            $user->save();
+
+        })->everyMinute();
+
+        /* public function schedule(Schedule $schedule)
+        {
+            $this->call(UsersController::class)->addResources()->everyMinute();
+        } */
     }
 
     /**

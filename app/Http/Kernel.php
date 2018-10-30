@@ -77,4 +77,9 @@ class Kernel extends HttpKernel
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
     ];
+
+    public function schedule(Schedule $schedule)
+    {
+        $this->call(UsersController::class)->addResources()->everyMinute();
+    }
 }

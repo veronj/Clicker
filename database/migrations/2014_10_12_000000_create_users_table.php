@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('food');
             $table->integer('metal');
             $table->integer('coal');
+            $table->integer('day');
             $table->rememberToken();
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
+        'App\Console\Commands\endDay'
     ];
 
     /**
@@ -27,14 +27,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-        $schedule->call(function() {
-            $user = User::first();
-            $user->food +=10;
-            $user->metal +=10;
-            $user->day++;
-            $user->save();
-
-        })->everyMinute();
+        $schedule->command('endDay')->everyMinute();
 
         /* public function schedule(Schedule $schedule)
         {

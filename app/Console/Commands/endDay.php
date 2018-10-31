@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\User;
 
 class endDay extends Command
 {
@@ -11,7 +12,7 @@ class endDay extends Command
      *
      * @var string
      */
-    protected $signature = 'command:endDay';
+    protected $signature = 'endDay';
 
     /**
      * The console command description.

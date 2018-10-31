@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
 <div class="col-md-4 col-md-offset-4">
-    <span><h1>User Resources</h1> <h3>Day : {{ $user->day }}</h3></span>
+    <span><h1>User Resources</h1> <h3>Day : {{ $user->day }}</h3> {{ date("H:i:s") }}</span>
     
     <hr>
     <ul>

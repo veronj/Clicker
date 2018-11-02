@@ -30,9 +30,9 @@ class UserController extends Controller
             $user->food -= $request->input('soldier');
             $user->soldier += $request->input('soldier');
             $user->save();
-            return redirect()->route('index')->with('success', "Units bought");
+            return redirect()->route('index')->with('success', 'Units bought');
         } else {
-            return redirect()->route('index')->with('error', "Not enough funds");
+            return redirect()->route('index')->with('error', 'Not enough funds');
         }
     }
 

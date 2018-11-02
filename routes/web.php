@@ -12,7 +12,12 @@
 */
 
 Route::get('/', [
-    'uses' => 'UsersController@index',
+    'uses' => 'UserController@index',
     'as' => 'index'
+]);
+
+route::post('/buyUnits', [
+    'uses' => 'UserController@buyUnits',
+    'as' => 'buyUnits'
 ]);
 

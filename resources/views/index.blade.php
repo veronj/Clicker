@@ -10,7 +10,18 @@
     <li>Food: {{ $user->food }}</li>
     <li>Metal: {{ $user->metal }}</li>
     <li>Coal: {{ $user->coal }}</li>
+    <li>Soldiers: {{ $user->soldier }}</li>
     </ul>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4 col-md-offset-4">
+<form action="{{ route('buyUnits') }}" method="post">
+<label for="soldier">Soldier</label>
+<input type="text" name="soldier" required>
+<button type="submit">Buy</button>
+{{ csrf_field() }}
+</form>
 </div>
 </div>
 @endsection
@@ -20,7 +31,7 @@
     <script type="text/javascript">
     setTimeout(function(){
         location.reload();
-    },50000);
+    },10000);
     </script>
 
 @endsection

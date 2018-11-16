@@ -36,5 +36,15 @@ class UserController extends Controller
         }
     }
 
+    public function endTurn()
+    {
+        $user = User::first();
+            $user->food +=10;
+            $user->metal +=10;
+            $user->day++;
+            $user->save();
+            return view('index', ['user' => $user]);
+    }
+
     
 }

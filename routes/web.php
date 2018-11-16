@@ -21,3 +21,8 @@ route::post('/buyUnits', [
     'as' => 'buyUnits'
 ]);
 
+route::post('/endTurn', [
+    'uses' => 'UserController@endTurn',
+    'as' => 'endTurn'
+]);
+

@@ -44,13 +44,19 @@
 </form>
 </div>
 </div>
+
+<form id="endTurn" action="{{ route('endTurn') }}" method="post" >
+    @csrf
+    <button type="submit">endTurn</button>
+</form>
 @endsection
 
 @section('scripts')
 
     <script type="text/javascript">
     setTimeout(function(){
-        location.reload();
+        document.getElementById("endTurn").submit();
+        
     },10000);
     </script>
 

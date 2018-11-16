@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Sector;
 
 class UserController extends Controller
 {
     public function index() {
         $user = User::first();
+        $sectors = Sector::all();
 
-        return view('index', ['user' => $user]);
+        return view('index', compact('user', 'sectors'));
     }
 
     public function addResources() {
@@ -43,7 +45,20 @@ class UserController extends Controller
             $user->metal +=10;
             $user->day++;
             $user->save();
-            return view('index', ['user' => $user]);
+
+        return redirect()->route('index');
+    }
+
+    public function attackSector() {
+        dd('hello');
+    }
+
+    public function pageTest() {
+        
+        $sectors = Sector::all();
+
+        return view('pageTest', compact('sectors'));
+
     }
 
     

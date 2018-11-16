@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 <!doctype html>
 <html>
 <head>
@@ -14,8 +21,28 @@
 
 
 <div class="container-fluid">
-@yield('content')
+        @foreach($sectors->chunk(3) as $sectorChunk)
+        <div class="row">
+            @foreach($sectorChunk as $sector)
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h3>{{ $sector->name }}</h3>
+                  <a href="{{ route('attackSector', ['id' => $sector->id ]) }}" class="btn btn-primary pull-right" role="button">Attack</a>
+                </div>
+              </div>
+            </div>
+            @endforeach
+        </div>
+        @endforeach
+
+
+
 </div>
+
+
+
+  
 
 
 

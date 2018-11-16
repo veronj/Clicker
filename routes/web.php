@@ -26,3 +26,13 @@ route::post('/endTurn', [
     'as' => 'endTurn'
 ]);
 
+route::post('/attackSector/{sector}', [
+    'uses' => 'UserController@attackSector',
+    'as' => 'attackSector'
+]);
+
+route::get('/pageTest', [
+    'uses' => 'UserController@pageTest',
+    'as' => 'pageTest'
+]);
+
